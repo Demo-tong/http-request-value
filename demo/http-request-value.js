@@ -10,8 +10,12 @@ let app = express();
 app.use(bodyParser.urlencoded({extend: true}));
 app.use(bodyParser.json());
 
-app.get('/query', function (req, res) {
+app.get('/query', (req, res)=> {
   res.send(req.query);
+});
+
+app.get('/params/:name',(req, res)=>{
+  res.send(req.params);
 });
 
 app.listen(3000, ()=> {
