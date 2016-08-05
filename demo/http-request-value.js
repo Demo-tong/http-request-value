@@ -14,8 +14,12 @@ app.get('/query', (req, res)=> {
   res.send(req.query);
 });
 
-app.get('/params/:name',(req, res)=>{
+app.get('/params/:name', (req, res)=> {
   res.send(req.params);
+});
+
+app.post('/header', (req, res)=> {
+  res.send(req.get('value'));
 });
 
 app.listen(3000, ()=> {

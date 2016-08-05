@@ -32,4 +32,18 @@ describe("http-request-value", function () {
               }
             });
   });
+
+  it("should get parameter by header", (done)=> {
+    request
+            .post('/header')
+            .set({value: '1234'})
+            .expect('1234')
+            .end((err, res)=> {
+              if (err) {
+                done.fail(err);
+              } else {
+                done();
+              }
+            });
+  });
 });
