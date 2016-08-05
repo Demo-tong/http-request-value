@@ -19,7 +19,7 @@ app.get('/params/:name', (req, res)=> {
 });
 
 app.post('/header', (req, res)=> {
-  res.send(req.get('value'));
+  res.send(req.get('name'));
 });
 
 app.post('/json', (req, res)=> {
