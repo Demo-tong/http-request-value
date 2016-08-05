@@ -22,6 +22,10 @@ app.post('/header', (req, res)=> {
   res.send(req.get('value'));
 });
 
+app.post('/json', (req, res)=> {
+  res.send(req.body);
+});
+
 app.listen(3000, ()=> {
   console.log("listening on port 3000");
 });

@@ -46,4 +46,19 @@ describe("http-request-value", function () {
               }
             });
   });
+
+  it("should get parameter by json", (done)=> {
+    request
+            .post('/json')
+            .set("Content-Type", "application/json")
+            .send({"name": "zhang", "age": "13"})
+            .expect({"name": "zhang", "age": "13"})
+            .end((err, res)=> {
+              if (err) {
+                done.fail(err);
+              } else {
+                done();
+              }
+            });
+  });
 });
