@@ -61,4 +61,18 @@ describe("http-request-value", function () {
               }
             });
   });
+
+  it("should get parameter by urlencoded", (done)=> {
+    request
+            .post('/url')
+            .send({name: "zhangsan"})
+            .expect("zhangsan")
+            .end((err, res)=> {
+              if (err) {
+                done.fail(err);
+              } else {
+                done();
+              }
+            });
+  });
 });
