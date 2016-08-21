@@ -19,7 +19,7 @@ app.get('/params/:name', (req, res)=> {
 });
 
 app.post('/header', (req, res)=> {
-  res.send(req.get('name'));
+  res.send(req.get('value'));
 });
 
 app.post('/json', (req, res)=> {
@@ -33,3 +33,5 @@ app.post('/url', (req, res)=> {
 app.listen(3000, ()=> {
   console.log("listening on port 3000");
 });
+
+module.exports = app;
